@@ -282,6 +282,7 @@ class AugraphyPipeline:
 
         # create augraphy cache folder
         cache_folder_path = os.path.join(os.getcwd() + "/augraphy_cache/")
+        cache_folder_path = os.path.join(os.getcwd(), "augraphy_cache", str(os.getpid()))
         os.makedirs(cache_folder_path, exist_ok=True)
         cache_image_paths = glob(cache_folder_path + "*.png", recursive=True)
 
