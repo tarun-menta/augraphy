@@ -256,14 +256,6 @@ class AugraphyPipeline:
                 ),
             )
 
-        # Check that image is the correct size.
-        if (image.shape[0] < 30) or (image.shape[1] < 30):
-            raise Exception(
-                "Image should have dimensions greater than 30x30, but actual dimensions were {}.".format(
-                    image.shape,
-                ),
-            )
-
         # get and check valid image type ( uint or float)
         image_type = str(image.dtype)
         image_max_value = 255
