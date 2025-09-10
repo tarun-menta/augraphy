@@ -388,8 +388,8 @@ class TextureGenerator:
         ysize, xsize = 1000, 1000
 
         number_granules = 800
-        granule_min_size = np.floor(min(xsize, ysize) / 600)
-        granule_max_size = np.ceil(min(xsize, ysize) / 495)
+        granule_min_size = int(np.floor(min(xsize, ysize) / 600))
+        granule_max_size = int(np.ceil(min(xsize, ysize) / 495))
 
         wave_grid_output = np.zeros((ysize, xsize), dtype="float")
 
