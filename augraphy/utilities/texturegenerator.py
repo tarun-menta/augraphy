@@ -526,8 +526,8 @@ class TextureGenerator:
         ysize, xsize = 1000, 1000
 
         number_granules = 500
-        granule_min_size = np.floor(min(xsize, ysize) / 10)
-        granule_max_size = np.ceil(min(xsize, ysize) / 5)
+        granule_min_size = int(np.floor(min(xsize, ysize) / 10))
+        granule_max_size = int(np.ceil(min(xsize, ysize) / 5))
 
         wave_grid_output = np.zeros((ysize, xsize), dtype="float")
 
@@ -544,8 +544,8 @@ class TextureGenerator:
             wave_grid_output += wave_grid
 
             # reduce granule size
-            granule_min_size = np.floor(granule_min_size * 0.9)
-            granule_max_size = np.ceil(granule_max_size * 0.9)
+            granule_min_size = int(np.floor(granule_min_size * 0.9))
+            granule_max_size = int(np.ceil(granule_max_size * 0.9))
 
         # stack images to create more dots effect
         wave_grid_output2 = np.fliplr(wave_grid_output) + np.flipud(wave_grid_output)
